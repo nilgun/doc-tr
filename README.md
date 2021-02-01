@@ -69,7 +69,7 @@ Windows için de benzer arayüz kullanılabiliyor: https://gitforwindows.org/
 Ama hemen çeviriye girişmeyeceksiniz. Bazı önişlemler var.
 
 Dosyanın ilk satırı genelde şuna benzer bir girdi içerir:
-```bash
+```
 <?xml version="1.0" encoding="utf-8"?>
 ```
 Bu satıra "XML başlığı" diyelim.
@@ -77,7 +77,7 @@ Bu satıra "XML başlığı" diyelim.
 Burada "utf-8", çeviri yaparken kullanacağınız karakter kodlamasıdır.
 
 XML başlığının altına şöyle bir satır ekleyin:
-```bash
+```
 <!-- EN-Revision: 123456 Maintainer: flarecaster Status: ready -->
 ```
 Bu satıra "güncelleme satırı" diyelim.
@@ -98,21 +98,22 @@ güncelleyecek ;-)
 
 Güncelleme sırasında `123456` yerine özgün belgenin yeni commit hash'ini
 yazmayı unutmuyoruz. Bunu elde etmek için özgün belgenin bulunduğu dizinde
-şu komutu verin: `cmhash  <dosya.xml>`
+şu komutu verin:
+```
+cmhash  <dosya.xml>
+```
 
 Bu başta çalışmayacak çünkü `cmhash` bir bash alias.
-Ev dizinizde `.bash_aliases` adında bir dosya
-oluşturun ve içine şu satırı yazın:
+Ev dizinizde `.bashrc` dosyasının sonuna şu satırı ekleyin:
 ```bash
 alias cmhash='git log -n1 --format=format:"%H"'
 ```
-Böylece her dosya için bu alengirli komutu yazmaktan kurtulursunuz.
-
-Bu satır sayesinde çeviri istatistikleri oluşturuluyor:
-http://doc.php.net/revcheck.php?p=translators&lang=tr
+ve aynı satırı bir deafalık komut satırından da girin ki oturum aç/kapa
+yapmak gerekmesin. Böylece her dosya için bu alengirli komutu yazmaktan
+kurtulursunuz.
 
 Güncelleme satırının altında bazı dosyalarda
-```bash
+```
 <!-- CREDITS: cumhuronat, tpug, antimon, flarecaster -->
 ```
 gibi satırlar göreceksiniz. Bu kişiler o belgenin çevirisiyle evvelce
@@ -138,11 +139,11 @@ yukarıdaki metni `<para>Bu eklenti PHP 8 gerektirir.</para>`
 Ayrıca dosyalarda bazen `&` ile başlayıp `;` ile biten bazı sözcüklere
 rastlayacaksınız. Onları cümlenin bir parçası haline getireceksiniz.
 Örneğin,
-```bash
+```
 <para>You must enable the <literal>foo</literal> setting in &php.ini;</para>
 ```
 yerine
-```bash
+```
 <para><literal>foo</literal> ayarını &php.ini; içinde yapmış olmalısınız.</para>
 ```
 yazacaksınız. Ancak bazı durumlarda bunu yapamayabiliriz. Değişken içindeki
@@ -191,10 +192,9 @@ Pull Request oluşturabilir.
 ### Sözlük
 
 Aşağıda İngilizce terimlerin bu çeviride kullandığımız Türkçe karşılıkları
-yazılmıştır.
-**AMACIMIZ AYNI TERİMLERİ KULLANMAK, OKUYUCUYU FARKLI TERİMLERLE
+yazılmıştır. **AMACIMIZ AYNI TERİMLERİ KULLANMAK, OKUYUCUYU FARKLI TERİMLERLE
 KAVRAM KARGAŞASI İÇİNDE BIRAKMAMAKTIR.**
-================================================
+
 ```
 _               Altçizgi imi
 &               Ve imi
@@ -307,7 +307,6 @@ Version.Revision.Patch   Biz bunun tamamına ve parçalarına sürüm numarası
                 diyoruz. Bu kılavuzun okuyucusu için sürüm numarasını oluşturan
                 parçaların isimlerinin bir önemi olmayacaktır.
 ```
-================================================
 
 PHP Belgelelerinin yapısı ve daha pek çok şey hakkında fikir edinmek için
 http://doc.php.net/tutorial/ adresindeki belgeyi ve
