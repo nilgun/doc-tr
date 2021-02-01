@@ -192,8 +192,8 @@ Pull Request oluşturabilir.
 ### Sözlük
 
 Aşağıda İngilizce terimlerin bu çeviride kullandığımız Türkçe karşılıkları
-yazılmıştır. **AMACIMIZ AYNI TERİMLERİ KULLANMAK, OKUYUCUYU FARKLI TERİMLERLE
-KAVRAM KARGAŞASI İÇİNDE BIRAKMAMAKTIR.**
+yazılmıştır. _AMACIMIZ AYNI TERİMLERİ KULLANMAK, OKUYUCUYU FARKLI TERİMLERLE
+KAVRAM KARGAŞASI İÇİNDE BIRAKMAMAKTIR._
 
 ```
 _               Altçizgi imi
